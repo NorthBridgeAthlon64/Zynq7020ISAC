@@ -1,0 +1,22 @@
+# Vivado 工程生成物与缓存（不纳入版本库）
+**/ISAC_PL.cache/
+**/ISAC_PL.runs/
+**/ISAC_PL.sim/
+**/ISAC_PL.gen/
+**/ISAC_PL.ip_user_files/
+**/ISAC_PL.hw/
+**/.Xil/
+*.jou
+*.log
+*.str
+*.dcp
+*.rpt
+*.pb
+*.opt
+*.xml
+*.wdf
+*.lpr
+*.xpr.backup
+
+# 可选：暂不跟踪 PS/SDK 树（无 Verilog 时）
+# ISAC_PS/

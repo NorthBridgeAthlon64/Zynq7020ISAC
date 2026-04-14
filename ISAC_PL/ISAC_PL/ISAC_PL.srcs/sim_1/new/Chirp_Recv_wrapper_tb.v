@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-// Chirp_Recv_wrapper 全链路仿真：BD 内 PDM_TO_PCM + I2S_TRANSMITTER
+// Chirp_Recv_wrapper 全链路仿真：BD �? PDM_TO_PCM + I2S_TRANSMITTER
 module Chirp_Recv_wrapper_tb;
 
     localparam integer SIM_CHIRP = 1;
@@ -35,7 +35,7 @@ module Chirp_Recv_wrapper_tb;
         .BCLK_OUT_0(BCLK_0)
     );
 
-    always @(posedge PDM_CLK_0) begin
+    always @(negedge PDM_CLK_0) begin
         if (!RESET_0) begin
             phase_acc  = 0.0;
             sim_time_s = 0.0;

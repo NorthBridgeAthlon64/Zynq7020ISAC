@@ -26,7 +26,6 @@
 **/ip/
 **/bd/*/ip/
 **/bd/*/ui/
-**/bd/*.bda
 
 # Vivado 仿真文件
 **/sim_1/
@@ -43,6 +42,7 @@
 **/.project
 **/.classpath
 **/.cproject
+**/.analytics
 
 # 编译输出文件
 **/Debug/

@@ -1,0 +1,229 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xA9D2DB7E8F5949B0",
+      "device": "xc7z020clg400-2",
+      "gen_directory": "../../../../ISAC_PL.gen/sources_1/bd/Chirp_Recv",
+      "name": "Chirp_Recv",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "I2S_TRANSMITTER_0": "",
+      "PDM_TO_PCM_0": ""
+    },
+    "ports": {
+      "PDM_CLK_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "RESET_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "Chirp_Recv_PDM_CLK_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "PDM_DATA_0": {
+        "direction": "I"
+      },
+      "RESET_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "I2S_DATA_0": {
+        "direction": "O"
+      },
+      "FSCLK_0": {
+        "direction": "O"
+      },
+      "BCLK_OUT_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "I2S_TRANSMITTER_0": {
+        "vlnv": "xilinx.com:module_ref:I2S_TRANSMITTER:1.0",
+        "xci_name": "Chirp_Recv_I2S_TRANSMITTER_0_0",
+        "xci_path": "ip\\Chirp_Recv_I2S_TRANSMITTER_0_0\\Chirp_Recv_I2S_TRANSMITTER_0_0.xci",
+        "inst_hier_path": "I2S_TRANSMITTER_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "I2S_TRANSMITTER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "BCLK": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Chirp_Recv_PDM_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "PCM_L": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "PCM_R": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "PCM_VALID": {
+            "direction": "I"
+          },
+          "I2S_DATA": {
+            "direction": "O"
+          },
+          "FSCLK": {
+            "direction": "O"
+          },
+          "BCLK_OUT": {
+            "direction": "O"
+          }
+        }
+      },
+      "PDM_TO_PCM_0": {
+        "vlnv": "xilinx.com:module_ref:PDM_TO_PCM:1.0",
+        "xci_name": "Chirp_Recv_PDM_TO_PCM_0_0",
+        "xci_path": "ip\\Chirp_Recv_PDM_TO_PCM_0_0\\Chirp_Recv_PDM_TO_PCM_0_0.xci",
+        "inst_hier_path": "PDM_TO_PCM_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PDM_TO_PCM",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "PDM_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Chirp_Recv_PDM_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "PDM_DATA": {
+            "direction": "I"
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "PCM_DATA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "PCM_VALID": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "PDM_CLK_0_1": {
+        "ports": [
+          "PDM_CLK_0",
+          "I2S_TRANSMITTER_0/BCLK",
+          "PDM_TO_PCM_0/PDM_CLK"
+        ]
+      },
+      "PDM_DATA_0_1": {
+        "ports": [
+          "PDM_DATA_0",
+          "PDM_TO_PCM_0/PDM_DATA"
+        ]
+      },
+      "RESET_0_1": {
+        "ports": [
+          "RESET_0",
+          "I2S_TRANSMITTER_0/RESET",
+          "PDM_TO_PCM_0/RESET"
+        ]
+      },
+      "PDM_TO_PCM_0_PCM_DATA": {
+        "ports": [
+          "PDM_TO_PCM_0/PCM_DATA",
+          "I2S_TRANSMITTER_0/PCM_L",
+          "I2S_TRANSMITTER_0/PCM_R"
+        ]
+      },
+      "PDM_TO_PCM_0_PCM_VALID": {
+        "ports": [
+          "PDM_TO_PCM_0/PCM_VALID",
+          "I2S_TRANSMITTER_0/PCM_VALID"
+        ]
+      },
+      "I2S_TRANSMITTER_0_I2S_DATA": {
+        "ports": [
+          "I2S_TRANSMITTER_0/I2S_DATA",
+          "I2S_DATA_0"
+        ]
+      },
+      "I2S_TRANSMITTER_0_FSCLK": {
+        "ports": [
+          "I2S_TRANSMITTER_0/FSCLK",
+          "FSCLK_0"
+        ]
+      },
+      "I2S_TRANSMITTER_0_BCLK_OUT": {
+        "ports": [
+          "I2S_TRANSMITTER_0/BCLK_OUT",
+          "BCLK_OUT_0"
+        ]
+      }
+    }
+  }
+}

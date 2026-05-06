@@ -18,5 +18,50 @@
 *.lpr
 *.xpr.backup
 
-# 可选：暂不跟踪 PS/SDK 树（无 Verilog 时）
+# Vivado 项目文件
+*.xpr
+*.wcfg
+
+# Vivado IP 核缓存
+**/ip/
+**/bd/*/ip/
+**/bd/*/ui/
+**/bd/*.bda
+
+# Vivado 仿真文件
+**/sim_1/
+
+# Vivado 约束文件
+**/constrs_1/
+
+# Vivado 硬件文件
+**/.hw/
+
+# Eclipse/SDK 工作区文件
+**/.metadata/
+**/.settings/
+**/.project
+**/.classpath
+**/.cproject
+
+# 编译输出文件
+**/Debug/
+**/Release/
+**/obj/
+**/bin/
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 测试音频文件（大文件）
+*.wav
+
+# PS/SDK 目录（可选，根据需求决定是否跟踪）
 # ISAC_PS/

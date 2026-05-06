@@ -16,7 +16,7 @@ module PDM_TO_PCM (
 
     localparam integer OSR = 64;
     localparam integer CIC_OUT_SHIFT = 6;
-    // 移位增益：先用 5（约 30.1dB），可按爆音情况降到 4
+    // 移位增益：先用 5（约 30.1dB）
     localparam integer GAIN_SHIFT = 5;
 
     reg [5:0] cnt;
